@@ -29,13 +29,13 @@ func (s SecureEmail) String() string {
 }
 
 func (s SecureEmail) MarshalJSON() ([]byte, error) {
-	if v, err := s.Secure(); err != nil {
+	if v, err := s.Secure(); err != nil || len(v) == 0 {
 		return json.Marshal(nil)
 	} else {
 		return json.Marshal(v)
 	}
 }
 
-func (s SecureEmail) UnSecure() string {
+func (s SecureEmail) Text() string {
 	return string(s)
 }

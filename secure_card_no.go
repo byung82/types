@@ -61,6 +61,6 @@ func (d SecureCardNumber) String() string {
 	return d.Secure()
 }
 
-func (d SecureCardNumber) UnSecure() string {
+func (d SecureCardNumber) Text() string {
 	return string(d)
 }
